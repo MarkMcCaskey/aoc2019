@@ -10,14 +10,17 @@ fn part1(input: &[usize]) -> usize {
 
 #[aoc(day1, part2)]
 fn part2(input: &[usize]) -> usize {
-    input.iter().map(|v| {
-        let mut n = *v as isize;
-        let mut sum = 0;
-        n = n / 3 - 2;
-        while n > 0 {
-            sum += n as usize;
+    input
+        .iter()
+        .map(|v| {
+            let mut n = *v as isize;
+            let mut sum = 0;
             n = n / 3 - 2;
-        }
-        sum
-    }).sum()
+            while n > 0 {
+                sum += n as usize;
+                n = n / 3 - 2;
+            }
+            sum
+        })
+        .sum()
 }
